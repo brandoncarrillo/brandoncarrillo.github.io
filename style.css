@@ -7,41 +7,39 @@ body {
   font-family: "Inter", sans-serif;
   background: #F7F4EF;
   color: #2D2D2D;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 /* =========================
-   MAIN LAYOUT (SPLIT)
+   LAYOUT (SOFT ASYMMETRY)
 ========================= */
 
 .layout {
   display: flex;
   min-height: 100vh;
-  padding: 40px;
-  gap: 40px;
+  padding: 60px;
+  gap: 80px;
+  align-items: center;
 }
 
 /* =========================
-   LEFT SIDE (IDENTITY)
+   LEFT (IDENTITY FOCUS)
 ========================= */
 
 .left {
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
-/* soft floating card (not rigid) */
-.identity-card {
-  max-width: 360px;
-  text-align: left;
+.identity {
+  max-width: 380px;
 }
 
 /* portrait */
 .portrait-frame {
-  width: 130px;
-  height: 130px;
+  width: 140px;
+  height: 140px;
   border-radius: 18px;
   overflow: hidden;
   margin-bottom: 18px;
@@ -57,7 +55,7 @@ body {
 /* name */
 h1 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 34px;
+  font-size: 36px;
   margin: 8px 0;
 }
 
@@ -71,11 +69,11 @@ h1 {
 /* button */
 .button {
   display: inline-block;
-  padding: 9px 16px;
+  padding: 10px 16px;
   border: 1px solid #7C97B6;
   color: #7C97B6;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 13.5px;
   transition: all 0.2s ease;
 }
@@ -86,49 +84,34 @@ h1 {
 }
 
 /* =========================
-   RIGHT SIDE (CONTENT PANELS)
+   RIGHT (FLUID CONTENT)
 ========================= */
 
 .right {
   flex: 1.2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 16px;
+  max-width: 520px;
 }
 
-/* soft minimal panels (not boxes-y) */
-.panel {
-  padding: 16px 18px;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.55);
-  border: 1px solid rgba(0,0,0,0.05);
-
-  /* subtle fluidity */
-  transition: transform 0.2s ease;
+/* IMPORTANT: no boxes */
+.block {
+  margin-bottom: 28px;
 }
 
-.panel:hover {
-  transform: translateY(-2px);
-}
-
-/* headings */
-.panel h2 {
+.block h2 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 18px;
+  font-size: 20px;
   margin: 0 0 6px;
 }
 
-/* text */
-.panel p, .panel li {
-  font-size: 14px;
+.block p {
+  font-size: 14.5px;
   color: #444;
+  margin: 0;
 }
 
-/* list */
-.panel ul {
-  margin: 0;
-  padding-left: 18px;
+/* subtle spacing rhythm */
+.block + .block {
+  margin-top: 18px;
 }
 
 /* =========================
@@ -138,15 +121,15 @@ h1 {
 @media (max-width: 900px) {
   .layout {
     flex-direction: column;
-    padding: 24px;
+    padding: 30px;
+    gap: 40px;
   }
 
-  .identity-card {
+  .left {
+    justify-content: center;
+  }
+
+  .identity {
     text-align: center;
-    margin-bottom: 10px;
-  }
-
-  .right {
-    justify-content: flex-start;
   }
 }
