@@ -217,3 +217,69 @@ footer {
     font-size: 42px;
   }
 }
+
+/* -------------------------
+   CENTERED BUBBLE LAYOUT
+-------------------------- */
+
+.center-bubble {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+/* the "identity bubble" */
+.bubble {
+  background: #FFFFFF;
+  padding: 50px 40px;
+  border-radius: 28px;
+  text-align: center;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* portrait */
+.portrait {
+  width: 140px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+}
+
+/* name */
+.bubble h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+  margin: 10px 0;
+}
+
+/* subtitle */
+.subtitle {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+/* button reuse (slightly refined centering feel) */
+.button {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 1px solid #7C97B6;
+  color: #7C97B6;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  background: #7C97B6;
+  color: white;
+}
