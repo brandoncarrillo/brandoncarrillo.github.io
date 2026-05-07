@@ -49,10 +49,10 @@ body.dim::before {
   text-align: center;
 }
 
-/* shadow circle */
+/* OUTER SHADOW CIRCLE */
 .circle-shadow {
-  width: 190px;
-  height: 190px;
+  width: 200px;
+  height: 200px;
   background: #DCE6F2;
   border-radius: 50%;
   position: absolute;
@@ -62,22 +62,28 @@ body.dim::before {
   z-index: 0;
 }
 
-/* main circle */
+/* MAIN IMAGE CONTAINER */
 .circle-main {
-  width: 180px;
-  height: 180px;
+  width: 180px !important;
+  height: 180px !important;
   border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto;
+  overflow: hidden !important;
   position: relative;
   z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
+/* THE ACTUAL IMAGE (THIS IS THE CRITICAL FIX) */
 .circle-main img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
 }
 
 /* greeting */
