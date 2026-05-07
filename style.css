@@ -1,5 +1,5 @@
 /* =========================
-   GLOBAL STYLES
+   GLOBAL
 ========================= */
 
 body {
@@ -7,73 +7,44 @@ body {
   font-family: "Inter", sans-serif;
   background: #F7F4EF;
   color: #2D2D2D;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* =========================
-   NAVIGATION (optional reuse)
-========================= */
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 28px 60px;
-}
-
-.logo {
-  font-weight: 500;
-}
-
-nav a {
-  margin-left: 24px;
-  text-decoration: none;
-  color: #2D2D2D;
-  font-size: 14px;
-  opacity: 0.75;
-}
-
-nav a:hover {
-  opacity: 1;
-}
-
-/* =========================
-   CENTERED IDENTITY BUBBLE
+   CENTER BUBBLE (MAIN FOCUS)
 ========================= */
 
 .center-bubble {
-  min-height: 85vh;
+  min-height: 72vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 20px;
+  padding: 40px 20px 20px;
 }
 
-/* main card */
 .bubble {
-  background: #ffffff;
-  padding: 48px 40px;
+  background: #fff;
+  padding: 42px 38px;
   border-radius: 28px;
   text-align: center;
   max-width: 520px;
   width: 100%;
 
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
 /* =========================
-   PORTRAIT (FIXED)
+   PORTRAIT
 ========================= */
 
 .portrait-frame {
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 20px auto;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 16px;
   border-radius: 18px;
   overflow: hidden;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.10);
 }
 
 .portrait-frame img {
@@ -89,16 +60,14 @@ nav a:hover {
 
 .bubble h1 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 34px;
-  font-weight: 500;
-  margin: 10px 0;
+  font-size: 32px;
+  margin: 6px 0;
 }
 
 .subtitle {
-  font-size: 15px;
+  font-size: 14.5px;
   color: #444;
-  margin-bottom: 26px;
-  line-height: 1.5;
+  margin-bottom: 18px;
 }
 
 /* =========================
@@ -107,12 +76,12 @@ nav a:hover {
 
 .button {
   display: inline-block;
-  padding: 10px 18px;
+  padding: 9px 16px;
   border: 1px solid #7C97B6;
   color: #7C97B6;
   text-decoration: none;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 13.5px;
   transition: all 0.2s ease;
 }
 
@@ -122,89 +91,59 @@ nav a:hover {
 }
 
 /* =========================
-   ABOUT SECTION
+   COMPACT SECTION (NO SCROLL FEEL)
 ========================= */
 
-.about {
-  max-width: 760px;
+.compact {
+  max-width: 900px;
   margin: 0 auto;
-  padding: 40px 30px;
-  font-size: 16px;
-  color: #444;
+  padding: 10px 20px 40px;
 }
 
-/* =========================
-   WORK SECTION
-========================= */
-
-.work {
-  padding: 40px 30px 80px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.work h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-/* grid */
-.cards {
+.compact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
-/* card style */
-.card {
-  background: white;
-  padding: 18px;
+/* blocks */
+.compact-block {
+  background: rgba(255,255,255,0.6);
+  padding: 16px 18px;
   border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease;
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
-.card:hover {
-  transform: translateY(-4px);
+.compact-block h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  margin: 0 0 8px;
 }
 
-.card h3 {
-  margin-top: 0;
-  font-size: 15px;
-}
-
-.card p {
+/* list styling */
+.compact-block ul {
+  margin: 0;
+  padding-left: 18px;
   font-size: 14px;
-  color: #555;
+  color: #444;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-  text-align: center;
-  padding: 40px;
-  font-size: 13px;
-  color: #777;
+.compact-block p {
+  font-size: 14px;
+  color: #444;
+  margin: 0;
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
+  .compact-grid {
+    grid-template-columns: 1fr;
+  }
 
   .bubble {
-    padding: 36px 26px;
-  }
-
-  .bubble h1 {
-    font-size: 28px;
-  }
-
-  nav {
-    display: none; /* keeps it clean on mobile */
+    padding: 34px 26px;
   }
 }
