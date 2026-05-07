@@ -12,61 +12,68 @@
 
 <body>
 
-  <!-- CENTER IDENTITY BUBBLE -->
-  <main class="center-bubble">
+  <main class="layout">
 
-    <div class="bubble">
+    <!-- LEFT: IDENTITY -->
+    <section class="left">
 
-      <div class="portrait-frame">
-        <img src="portrait.jpg" alt="Portrait of Brandon Carrillo" />
+      <div class="identity-card">
+
+        <div class="portrait-frame">
+          <img src="portrait.jpg" alt="Portrait" />
+        </div>
+
+        <h1>Brandon Carrillo</h1>
+
+        <p class="subtitle">
+          Developmental Psychology Researcher studying how children learn
+          from social information, intention, and everyday interactions.
+        </p>
+
+        <a class="button" href="#research">View Research</a>
+
       </div>
 
-      <h1>Brandon Carrillo</h1>
+    </section>
 
-      <p class="subtitle">
-        Developmental Psychology Researcher studying how children learn
-        from social information, intention, and everyday interactions.
-      </p>
+    <!-- RIGHT: CONTENT PREVIEW -->
+    <section class="right">
 
-      <a class="button" href="#work">View Research</a>
+      <div class="panel">
 
-    </div>
-
-  </main>
-
-  <!-- COMPACT BELOW-THE-FOLD STRIP -->
-  <section class="compact">
-
-    <div class="compact-grid">
-
-      <div class="compact-block">
         <h2>About</h2>
         <p>
-          I apply experimental and behavioral methods to understand how
-          children interpret and learn from others in everyday contexts.
+          I study how children interpret and learn from social cues,
+          focusing on intention, risk, and everyday learning environments.
         </p>
+
       </div>
 
-      <div class="compact-block" id="work">
+      <div class="panel" id="research">
+
         <h2>Selected Work</h2>
+
         <ul>
           <li>Social Learning in Early Childhood</li>
           <li>Risk Understanding in Development</li>
           <li>Everyday Learning Interactions</li>
         </ul>
+
       </div>
 
-      <div class="compact-block">
-        <h2>Contact</h2>
+      <div class="panel">
+
+        <h2>CV & Contact</h2>
+
         <p>
-          email@example.com<br/>
-          GitHub · LinkedIn
+          Download CV · Email · GitHub · LinkedIn
         </p>
+
       </div>
 
-    </div>
+    </section>
 
-  </section>
+  </main>
 
 </body>
 </html>
