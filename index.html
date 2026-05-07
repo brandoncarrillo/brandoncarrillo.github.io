@@ -2,69 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brandon Carrillo</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
 
-  <main class="layout">
+<div class="layout">
 
-    <!-- LEFT: IDENTITY -->
-    <section class="left">
+  <!-- LEFT IDENTITY -->
+  <section class="left">
 
-      <div class="identity">
+    <div class="avatar-stack">
 
-        <div class="portrait-frame">
-          <img src="portrait.jpg" alt="Portrait" />
-        </div>
+      <div class="circle-shadow"></div>
 
-        <h1>Brandon Carrillo</h1>
+      <div class="circle-main">
+        <img src="portrait.jpg" alt="Brandon Carrillo"/>
+      </div>
 
-        <p class="subtitle">
-          Developmental Psychology Researcher studying how children learn
+      <div class="greeting">
+        <h1>Hi there!</h1>
+        <h2>I’m Brandon Carrillo.</h2>
+        <p>
+          Developmental psychology researcher studying how children learn
           from social information, intention, and everyday interactions.
         </p>
-
-        <a class="button" href="#research">View Research</a>
-
       </div>
 
-    </section>
+    </div>
 
-    <!-- RIGHT: SOFT CONTENT FLOW -->
-    <section class="right">
+  </section>
 
-      <div class="block">
-        <h2>About</h2>
-        <p>
-          I study how children interpret social cues and make sense of
-          intention, risk, and learning in everyday environments.
-        </p>
-      </div>
+  <!-- RIGHT BUBBLES -->
+  <section class="right" id="content">
 
-      <div class="block" id="research">
-        <h2>Selected Work</h2>
-        <p>
-          Social Learning in Early Childhood · Risk Understanding ·
-          Everyday Learning Interactions
-        </p>
-      </div>
+    <div class="bubble" data-id="about">
+      <h3>About me</h3>
+      <p>
+        I study how children interpret social cues, make inferences about intention,
+        and learn from everyday interactions.
+      </p>
+    </div>
 
-      <div class="block">
-        <h2>CV & Contact</h2>
-        <p>
-          Download CV · Email · GitHub · LinkedIn
-        </p>
-      </div>
+    <div class="bubble" data-id="research">
+      <h3>My research</h3>
+      <p>
+        Social learning, risk understanding, and early cognitive development
+        using experimental and behavioral methods.
+      </p>
+    </div>
 
-    </section>
+    <div class="bubble" data-id="connect">
+      <h3>Connect with me</h3>
+      <p>
+        CV · Email · LinkedIn
+      </p>
+    </div>
 
-  </main>
+  </section>
+
+</div>
+
+<script>
+const bubbles = document.querySelectorAll(".bubble");
+const body = document.body;
+
+bubbles.forEach(b => {
+  b.addEventListener("click", () => {
+
+    // toggle active
+    const isActive = b.classList.contains("active");
+
+    bubbles.forEach(x => x.classList.remove("active"));
+    body.classList.remove("dim");
+
+    if (!isActive) {
+      b.classList.add("active");
+      body.classList.add("dim");
+    }
+
+  });
+});
+</script>
 
 </body>
 </html>
