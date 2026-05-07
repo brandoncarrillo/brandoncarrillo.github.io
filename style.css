@@ -11,69 +11,64 @@ body {
 }
 
 /* =========================
-   CENTER BUBBLE (MAIN FOCUS)
+   MAIN LAYOUT (SPLIT)
 ========================= */
 
-.center-bubble {
-  min-height: 72vh;
+.layout {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px 20px;
-}
-
-.bubble {
-  background: #fff;
-  padding: 42px 38px;
-  border-radius: 28px;
-  text-align: center;
-  max-width: 520px;
-  width: 100%;
-
-  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-  border: 1px solid rgba(0,0,0,0.05);
+  min-height: 100vh;
+  padding: 40px;
+  gap: 40px;
 }
 
 /* =========================
-   PORTRAIT
+   LEFT SIDE (IDENTITY)
 ========================= */
 
+.left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* soft floating card (not rigid) */
+.identity-card {
+  max-width: 360px;
+  text-align: left;
+}
+
+/* portrait */
 .portrait-frame {
   width: 130px;
   height: 130px;
-  margin: 0 auto 16px;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+  margin-bottom: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.10);
 }
 
 .portrait-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* =========================
-   TYPOGRAPHY
-========================= */
-
-.bubble h1 {
+/* name */
+h1 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 32px;
-  margin: 6px 0;
+  font-size: 34px;
+  margin: 8px 0;
 }
 
+/* subtitle */
 .subtitle {
   font-size: 14.5px;
   color: #444;
   margin-bottom: 18px;
 }
 
-/* =========================
-   BUTTON
-========================= */
-
+/* button */
 .button {
   display: inline-block;
   padding: 9px 16px;
@@ -91,59 +86,67 @@ body {
 }
 
 /* =========================
-   COMPACT SECTION (NO SCROLL FEEL)
+   RIGHT SIDE (CONTENT PANELS)
 ========================= */
 
-.compact {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 10px 20px 40px;
+.right {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
 }
 
-.compact-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-/* blocks */
-.compact-block {
-  background: rgba(255,255,255,0.6);
+/* soft minimal panels (not boxes-y) */
+.panel {
   padding: 16px 18px;
   border-radius: 14px;
+  background: rgba(255,255,255,0.55);
   border: 1px solid rgba(0,0,0,0.05);
+
+  /* subtle fluidity */
+  transition: transform 0.2s ease;
 }
 
-.compact-block h2 {
+.panel:hover {
+  transform: translateY(-2px);
+}
+
+/* headings */
+.panel h2 {
   font-family: "Cormorant Garamond", serif;
   font-size: 18px;
-  margin: 0 0 8px;
+  margin: 0 0 6px;
 }
 
-/* list styling */
-.compact-block ul {
+/* text */
+.panel p, .panel li {
+  font-size: 14px;
+  color: #444;
+}
+
+/* list */
+.panel ul {
   margin: 0;
   padding-left: 18px;
-  font-size: 14px;
-  color: #444;
-}
-
-.compact-block p {
-  font-size: 14px;
-  color: #444;
-  margin: 0;
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
 
-@media (max-width: 800px) {
-  .compact-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column;
+    padding: 24px;
   }
 
-  .bubble {
-    padding: 34px 26px;
+  .identity-card {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .right {
+    justify-content: flex-start;
   }
 }
